@@ -1,0 +1,8 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Source code
+*.cpp text encoding=utf-8
+*.h text encoding=utf-8
+*.hpp text encoding=utf-8
+*.c text encoding=utf-8

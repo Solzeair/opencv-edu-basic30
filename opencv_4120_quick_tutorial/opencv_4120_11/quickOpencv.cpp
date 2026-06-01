@@ -228,9 +228,6 @@ void QuickDemo::bitwise_demo(Mat& image)
 	imshow("m1", m1);
 	imshow("m2", m2);
 	Mat dst;
-	// bitwise_and(m1, m2, dst); // 与
-	// bitwise_or(m1, m2, dst);  // 或
-	// bitwise_xor(m1, m2, dst); // 异或
 	bitwise_not(image, dst); // 非
 	imshow("像素位操作", dst);
 	waitKey(0);
@@ -240,8 +237,6 @@ void QuickDemo::bitwise_demo(Mat& image)
 void QuickDemo::channels_demo(Mat& image)
 {
 	vector<Mat> mv;
-	// split 的作用是把一张多通道图像拆成多个单通道图像。
-	// 注意和rgb相反 拆成 蓝（B）绿（G）红（R）透明度（Alpha）
 	split(image, mv);
 	namedWindow("blue", WINDOW_NORMAL);
 	resizeWindow("blue", 600, 400);
@@ -251,27 +246,42 @@ void QuickDemo::channels_demo(Mat& image)
 	resizeWindow("red", 600, 400);
 	imshow("blue", mv[0]);
 	imshow("green", mv[1]);
-	// imshow("red", mv[2]);
 	Mat dst;
 	mv[0] = 0;
 	mv[1] = 0;
-	// merge 的作用是把多个单通道图像组合成一张多通道图像。
 	merge(mv, dst);
 	imshow("red", dst);
-	//void mixChannels(
-	//	const Mat * src,    // 指向输入图像数组的指针
-	//	size_t nsrcs,       // 输入图像的数量
-	//	Mat * dst,          // 指向输出图像数组的指针
-	//	size_t ndsts,       // 输出图像的数量
-	//	const int* fromTo,  // 映射规则数组
-	//	size_t npairs       // 映射规则的数量
-	//);
-	// 数组按 {源通道, 目标通道} 成对读取  0->2 1->1 2->0
-	int from_to[] = { 0,2, 1,1, 2,0 }; 
+	int from_to[] = { 0,2, 1,1, 2,0 };
 	mixChannels(&image, 1, &dst, 1, from_to, 3);
 	namedWindow("miximage", WINDOW_NORMAL);
 	resizeWindow("miximage", 600, 400);
 	imshow("miximage", dst);
+}
+
+void QuickDemo::in_range_demo(Mat& image)
+{
+	// 做色彩转换时，HSV比RGB更适合，H（色相) 能直接定位颜色范围。
+	Mat hsv;
+	cvtColor(image, hsv, COLOR_BGR2HSV);
+	Mat mask;
+	// inRange 函数，输入任意色彩空间，输出掩膜 掩膜是单通道，每个像素只有一个值（0 或 255）
+	// 对每个像素，逐通道判断是否在 [lowerb, upperb] 闭区间内。满足输出 255，不满足则输出 0。最后生成的是掩膜
+	// Scalar 范围值查表 resource文件 
+	// H色相：青蓝紫区间 S饱和度：过滤掉接近灰白的颜色 V明度：过滤掉接近黑色的颜色
+	inRange(hsv, Scalar(78, 43, 46), Scalar(155, 255, 255), mask); // 掩膜亮处为蓝色天空
+	namedWindow("mask", WINDOW_NORMAL);
+	resizeWindow("mask", 600, 400);
+
+	// 蓝色天空替换为橙色天空
+	Mat orangeback = Mat::zeros(image.size(), image.type());
+	orangeback = Scalar(51, 153, 225); // BGR 写反易错
+	bitwise_not(mask, mask); // 掩膜取反，使得亮处为花草
+	imshow("mask", mask);
+	// image 复制给 orangeback，mask决定哪些位置的像素要复制，值为255要复制
+	image.copyTo(orangeback, mask);
+	namedWindow("roi区域提取", WINDOW_NORMAL);
+	resizeWindow("roi区域提取", 600, 400);
+	imshow("roi区域提取", orangeback);
 }
 
 

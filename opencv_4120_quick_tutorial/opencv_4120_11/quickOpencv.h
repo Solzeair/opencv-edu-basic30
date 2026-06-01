@@ -13,4 +13,8 @@ public:
 	void tracking_bat_demo1(Mat& image);  // 滚动条操作演示亮度
 	void tracking_bat_demo2(Mat& image);  // 滚动条操作演示对比度
 	void key_demo(Mat& image);			  // 键盘响应操作
+	void color_style_demo(Mat& image);    // 自带颜色表操作
+	void bitwise_demo(Mat& image);		  // 像素的位操作
+	void channels_demo(Mat& image);       // 通道的分离和合并
+	void in_range_demo(Mat& image);       // 图像采色空间转换
 };

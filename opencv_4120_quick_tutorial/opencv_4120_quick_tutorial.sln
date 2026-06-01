@@ -23,6 +23,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_4120_09", "opencv_41
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_4120_10", "opencv_4120_10\opencv_4120_10.vcxproj", "{DC1F8530-AE2D-46E9-8D81-3E53763DBB1F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencv_4120_11", "opencv_4120_11\opencv_4120_11.vcxproj", "{D56AD337-0FD1-42E6-848A-F30B144B470E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -111,6 +113,14 @@ Global
 		{DC1F8530-AE2D-46E9-8D81-3E53763DBB1F}.Release|x64.Build.0 = Release|x64
 		{DC1F8530-AE2D-46E9-8D81-3E53763DBB1F}.Release|x86.ActiveCfg = Release|Win32
 		{DC1F8530-AE2D-46E9-8D81-3E53763DBB1F}.Release|x86.Build.0 = Release|Win32
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Debug|x64.ActiveCfg = Debug|x64
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Debug|x64.Build.0 = Debug|x64
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Debug|x86.ActiveCfg = Debug|Win32
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Debug|x86.Build.0 = Debug|Win32
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Release|x64.ActiveCfg = Release|x64
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Release|x64.Build.0 = Release|x64
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Release|x86.ActiveCfg = Release|Win32
+		{D56AD337-0FD1-42E6-848A-F30B144B470E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <opencv2/opencv.hpp>
 using namespace cv;
@@ -6,13 +6,13 @@ using namespace std;
 
 class QuickDemo {
 public:
-	void colotSpaceDemo(Mat& image);      // Í¼ÏñÉ«²Ê¿Õ¼ä×ª»»
-	void mat_creation_demo(Mat& image);   // Í¼Ïñ¶ÔÏóµÄ´´½¨Óë¸³Öµ
-	void pixel_visit_demo(Mat& image);	  // Í¼ÏñÏñËØµÄ¶ÁĞ´²Ù×÷
-	void operators_demo(Mat& image);	  // Í¼ÏñÏñËØµÄËãÊõ²Ù×÷
-	void tracking_bat_demo1(Mat& image);  // ¹ö¶¯Ìõ²Ù×÷ÑİÊ¾ÁÁ¶È
-	void tracking_bat_demo2(Mat& image);  // ¹ö¶¯Ìõ²Ù×÷ÑİÊ¾¶Ô±È¶È
-	void key_demo(Mat& image);			  // ¼üÅÌÏìÓ¦²Ù×÷
-	void color_style_demo(Mat& image);    // ×Ô´øÑÕÉ«±í²Ù×÷
-	void bitwise_demo(Mat& image);		  // ÏñËØµÄÎ»²Ù×÷
+	void colotSpaceDemo(Mat& image);      // å›¾åƒè‰²å½©ç©ºé—´è½¬æ¢
+	void mat_creation_demo(Mat& image);   // å›¾åƒå¯¹è±¡çš„åˆ›å»ºä¸èµ‹å€¼
+	void pixel_visit_demo(Mat& image);	  // å›¾åƒåƒç´ çš„è¯»å†™æ“ä½œ
+	void operators_demo(Mat& image);	  // å›¾åƒåƒç´ çš„ç®—æœ¯æ“ä½œ
+	void tracking_bat_demo1(Mat& image);  // æ»šåŠ¨æ¡æ“ä½œæ¼”ç¤ºäº®åº¦
+	void tracking_bat_demo2(Mat& image);  // æ»šåŠ¨æ¡æ“ä½œæ¼”ç¤ºå¯¹æ¯”åº¦
+	void key_demo(Mat& image);			  // é”®ç›˜å“åº”æ“ä½œ
+	void color_style_demo(Mat& image);    // è‡ªå¸¦é¢œè‰²è¡¨æ“ä½œ
+	void bitwise_demo(Mat& image);		  // åƒç´ çš„ä½æ“ä½œ
 };

@@ -1,19 +1,19 @@
-#include <opencv2/opencv.hpp>
+ï»¿#include <opencv2/opencv.hpp>
 #include "quickOpencv.h"
 #include <iostream>
 using namespace std;
 using namespace cv;
 
 int main(int argc, char** argv) {
-	// RGB Í¨µÀË³Ğò B G R ¹²2^24ÖÖÑÕÉ«
+	// RGB é€šé“é¡ºåº B G R å…±2^24ç§é¢œè‰²
 	Mat src = imread("E:/opencv/image/123.png"); 
 	if (src.empty()) {
 		printf("could not load image...");
 		return -1;
 	}
 	namedWindow("output image", cv::WINDOW_FREERATIO);
-	// Ö»Ö§³Ö8Î»µÄÏÔÊ¾»òÕß¸¡µãÊıµÄÏÔÊ¾
-	// ÀàĞÍÊÇ CV_8U »òÕßÊı¾İ·¶Î§ÔÚ 0~1 µÄ¸¡µãÊı
+	// åªæ”¯æŒ8ä½çš„æ˜¾ç¤ºæˆ–è€…æµ®ç‚¹æ•°çš„æ˜¾ç¤º
+	// ç±»å‹æ˜¯ CV_8U æˆ–è€…æ•°æ®èŒƒå›´åœ¨ 0~1 çš„æµ®ç‚¹æ•°
 	imshow("output image", src);
 
 	QuickDemo qd;
