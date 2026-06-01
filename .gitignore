@@ -1,0 +1,40 @@
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.suo
+*.sdf
+*.opendb
+*.opensdf
+*.aps
+
+# Build output
+x64/
+x86/
+Debug/
+Release/
+[Bb]uild/
+
+# Build artifacts
+*.exe
+*.dll
+*.pdb
+*.obj
+*.ilk
+*.idb
+*.iobj
+*.ipdb
+*.log
+*.tlog
+*.lastbuildstate
+*.recipe
+*.FileListAbsolute.txt
+*.Build.CppClean.log
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Other
+.claude
+.git
